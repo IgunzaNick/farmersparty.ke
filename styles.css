@@ -241,3 +241,19 @@ html{scroll-behavior:smooth}
   object-fit: contain;
   padding: 2px;
 }
+
+/* ===== Photo Integration ===== */
+.hero .ph, .events .ph, .avatar {
+  overflow: hidden;
+  padding: 0;
+}
+.hero .ph img, .events .ph img, .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero .ph {
+  border-style: solid;
+  border-color: var(--gold);
+}
