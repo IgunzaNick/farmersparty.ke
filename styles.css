@@ -138,11 +138,11 @@ html{scroll-behavior:smooth}
 .container,.sec,.wrap,.acc,.contact,.list,.filters,.objection,.intro>*,.hero-in,.ftr-in{max-width:1140px;margin-left:auto;margin-right:auto;width:100%}
 .sec,.wrap,.acc,.contact,.list,.filters{padding-left:24px;padding-right:24px}
 .objection{margin:0 auto 32px;width:calc(100% - 48px)}
-/* header with inline nav */
+/* header with inline nav — logo left, nav far right */
 .hdr{position:sticky;top:0;z-index:20;padding:0}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;flex-wrap:wrap}
 .menu-btn{display:none;font:inherit;font-weight:700;background:transparent;color:#fff;border:2px solid var(--gold);border-radius:10px;padding:8px 14px;cursor:pointer}
-.nav{background:transparent;border:0;padding:0;gap:4px;align-items:center}
+.nav{background:transparent;border:0;padding:0;gap:4px;align-items:center;margin-left:auto}
 .nav a{flex:none;padding:10px 14px;font-size:16px;color:#E3ECE0;border-radius:8px;border-bottom:3px solid transparent;border-radius:8px 8px 0 0}
 .nav a:hover{background:rgba(255,255,255,.12);color:#fff}
 .nav a[aria-current=page]{color:var(--gold);border-bottom:3px solid var(--gold)}
@@ -210,8 +210,8 @@ html{scroll-behavior:smooth}
 .ftr-bar{border-top:1px solid rgba(255,255,255,.14);padding:16px 24px;text-align:center;font-size:13px;color:#A9AFA2}
 /* tablet + phone */
 @media (max-width:900px){
-.menu-btn{display:block}
-.nav{display:none;width:100%;flex-direction:column;align-items:stretch;padding:8px 0 12px}
+.menu-btn{display:block;margin-left:auto}
+.nav{display:none;width:100%;flex-direction:column;align-items:stretch;padding:8px 0 12px;margin-left:0}
 .nav.open{display:flex}
 .nav a,.nav a.btn-join{text-align:left;margin:0}
 .nav a.btn-join{text-align:center;margin-top:8px}
@@ -257,3 +257,24 @@ html{scroll-behavior:smooth}
   border-style: solid;
   border-color: var(--gold);
 }
+/* ===== Agenda card photos ===== */
+.pcard {
+    padding: 0;
+    overflow: hidden;
+  }
+  .pcard img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--line);
+  }
+  .pcard .pcard-body {
+    padding: 16px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  @media (max-width:900px) {
+    .pcard img { height: 140px; }
+  }
