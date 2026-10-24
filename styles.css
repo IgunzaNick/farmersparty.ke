@@ -208,25 +208,56 @@ html{scroll-behavior:smooth}
 .ftr .btn-wa{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;margin:6px 0 14px;color:#fff}
 .ftr .soc{gap:18px}.ftr .soc a{color:var(--gold)}
 .ftr-bar{border-top:1px solid rgba(255,255,255,.14);padding:16px 24px;text-align:center;font-size:13px;color:#A9AFA2}
-/* tablet + phone */
+
+/* ===== Mobile Menu (Responsive) ===== */
 @media (max-width:900px){
-.menu-btn{display:block;margin-left:auto}
-.nav{display:none;width:100%;flex-direction:column;align-items:stretch;padding:8px 0 12px;margin-left:0}
-.nav.open{display:flex}
-.nav a,.nav a.btn-join{text-align:left;margin:0}
-.nav a.btn-join{text-align:center;margin-top:8px}
-.hero{padding:40px 20px 48px}
-.hero-in{grid-template-columns:1fr;gap:28px}
-.hero .ph{height:220px}
-.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
-.grid3,.about,.list,.acc,.contact,.ftr-in{grid-template-columns:1fr}
-.contact .info,.contact .btn,.contact .map{grid-column:1;grid-row:auto}
-.contact .map{min-height:160px}
-.ftr-in{gap:28px;padding-top:36px}
-.events{flex-direction:column}
-.cta-in{flex-direction:column;align-items:stretch;text-align:center}
-.intro{padding:32px 20px 28px}
+  .menu-btn{display:block;margin-left:auto}
+  /* Hide the nav by default, make it a full-width dropdown */
+  .nav{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+    padding:8px 0 12px;
+    margin-left:0;
+    margin-top:10px;
+    background:var(--green-dk);
+    border-radius:10px;
+  }
+  .nav.open{display:flex}
+  /* Style the links for touch screens */
+  .nav a,.nav a.btn-join{
+    text-align:left;
+    margin:0;
+    padding:14px 20px;
+    border-radius:8px;
+    border-bottom:0;
+  }
+  .nav a[aria-current=page]{
+    background:rgba(255,255,255,.1);
+    border-left:4px solid var(--gold);
+  }
+  .nav a.btn-join{
+    text-align:center;
+    margin-top:8px;
+    background:var(--gold);
+    color:var(--ink);
+  }
+  
+  /* Layout adjustments for mobile */
+  .hero{padding:40px 20px 48px}
+  .hero-in{grid-template-columns:1fr;gap:28px}
+  .hero .ph{height:220px}
+  .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid3,.about,.list,.acc,.contact,.ftr-in{grid-template-columns:1fr}
+  .contact .info,.contact .btn,.contact .map{grid-column:1;grid-row:auto}
+  .contact .map{min-height:160px}
+  .ftr-in{gap:28px;padding-top:36px}
+  .events{flex-direction:column}
+  .cta-in{flex-direction:column;align-items:stretch;text-align:center}
+  .intro{padding:32px 20px 28px}
 }
+
 @media (max-width:520px){.hero .cta{flex-direction:column}.sec,.wrap,.acc,.contact,.list,.filters{padding-left:16px;padding-right:16px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
@@ -257,24 +288,25 @@ html{scroll-behavior:smooth}
   border-style: solid;
   border-color: var(--gold);
 }
+
 /* ===== Agenda card photos ===== */
 .pcard {
-    padding: 0;
-    overflow: hidden;
-  }
-  .pcard img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    display: block;
-    border-bottom: 1px solid var(--line);
-  }
-  .pcard .pcard-body {
-    padding: 16px 20px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  @media (max-width:900px) {
-    .pcard img { height: 140px; }
-  }
+  padding: 0;
+  overflow: hidden;
+}
+.pcard img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--line);
+}
+.pcard .pcard-body {
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+@media (max-width:900px) {
+  .pcard img { height: 140px; }
+}
