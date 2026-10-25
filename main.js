@@ -1,7 +1,7 @@
 /* Farmers Party – front-end logic.
    Calls Spring Boot at /api/*; falls back to the built-in data below if the API is unreachable. */
    (() => {
-    const API = 'http://localhost:8080/api';
+    const API = 'https://api.farmersparty.ke/api';
     const $ = (s) => document.querySelector(s);
     const el = (tag, attrs = {}, ...kids) => {
       const n = document.createElement(tag);
