@@ -80,7 +80,36 @@ legend{font-weight:600;font-size:15px;margin-bottom:8px;padding:0}
 .acc .card{overflow:hidden}
 .acc button{font:inherit;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:0;padding:16px;min-height:56px;text-align:left;color:var(--ink);font-weight:700;font-size:17px;cursor:pointer}
 .acc button span+span{font-size:22px;color:var(--green)}
-.acc p{padding:0 16px 16px;font-size:16px;line-height:1.5;color:var(--text2)}
+
+/* ===== Agenda Pillar Rich Content Styles ===== */
+#pillars .card > div[id^="pillar-"] {
+  padding: 0 16px 16px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text2);
+}
+#pillars .card > div[id^="pillar-"] p {
+  margin: 0 0 10px;
+}
+#pillars .card > div[id^="pillar-"] ul {
+  margin: 8px 0 14px;
+  padding-left: 22px;
+  list-style-type: disc;
+}
+#pillars .card > div[id^="pillar-"] li {
+  margin-bottom: 8px;
+}
+#pillars .card > div[id^="pillar-"] .pillar-ref {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--muted);
+}
+#pillars .card > div[id^="pillar-"] .pillar-ref strong {
+  color: var(--green);
+}
+
 .contact{padding:20px 16px 24px;display:flex;flex-direction:column;gap:12px}
 .contact h2{margin:0;font-size:22px}
 .contact .info{padding:16px;display:flex;flex-direction:column;gap:8px;font-size:16px;line-height:1.45}
@@ -124,7 +153,7 @@ legend{font-weight:600;font-size:15px;margin-bottom:8px;padding:0}
 .card-pad h2,.objection h2{color:var(--green)}
 /* accordion + chips */
 .acc button[aria-expanded=true]{background:var(--gold-tint);border-left:5px solid var(--gold);padding-left:11px}
-.acc button[aria-expanded=true]+p{background:var(--gold-tint);border-left:5px solid var(--gold);padding-top:0;padding-left:11px}
+.acc button[aria-expanded=true]+div[id^="pillar-"]{background:var(--gold-tint);border-left:5px solid var(--gold);padding-top:16px;padding-left:11px}
 .chip:hover{border-color:var(--green)}
 .chip[aria-pressed=true]{box-shadow:0 3px 0 var(--gold)}
 .in:focus{border-color:var(--green);box-shadow:0 0 0 3px var(--gold-tint),0 0 0 4px var(--gold);outline:none}

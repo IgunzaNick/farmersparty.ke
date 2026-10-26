@@ -93,7 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn = el('button', { type: 'button', 'aria-expanded': String(isOpen), 'aria-controls': id },
           el('span', { text: p.title }), el('span', { 'aria-hidden': 'true', text: isOpen ? '−' : '+' }));
         btn.addEventListener('click', () => { open = isOpen ? '' : p.title; render(i); });
-        const body = el('p', { id, text: p.body }); body.hidden = !isOpen;
+
+        // ✅ CHANGED: use a div and innerHTML so the HTML tags (bullets) render correctly
+        const body = el('div', { id });
+        body.innerHTML = p.body;
+        body.hidden = !isOpen;
+
         return el('div', { class: 'card' }, btn, body);
       }));
       if (focusIdx !== undefined) box.querySelectorAll('button')[focusIdx].focus();
