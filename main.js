@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ---------- Data and forms ---------- */
 (() => {
-  const API = 'http://169.58.80.75:8081/api';
+  const API = 'https://api.farmersparty.ke/website-api';
   const $ = (s) => document.querySelector(s);
   const el = (tag, attrs = {}, ...kids) => {
     const n = document.createElement(tag);
