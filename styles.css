@@ -138,10 +138,11 @@ html{scroll-behavior:smooth}
 .container,.sec,.wrap,.acc,.contact,.list,.filters,.objection,.intro>*,.hero-in,.ftr-in{max-width:1140px;margin-left:auto;margin-right:auto;width:100%}
 .sec,.wrap,.acc,.contact,.list,.filters{padding-left:24px;padding-right:24px}
 .objection{margin:0 auto 32px;width:calc(100% - 48px)}
-/* header with inline nav — logo left, nav far right */
-.hdr{position:sticky;top:0;z-index:20;padding:0}
+/* header with inline nav: logo left, nav far right */
+.hdr{position:sticky;top:0;z-index:1000;padding:0}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;flex-wrap:wrap}
-.menu-btn{display:none;font:inherit;font-weight:700;background:transparent;color:#fff;border:2px solid var(--gold);border-radius:10px;padding:8px 14px;cursor:pointer}
+.menu-btn{display:none;font:inherit;font-weight:700;background:transparent;color:#fff;border:2px solid var(--gold);border-radius:10px;padding:8px 14px;cursor:pointer;
+  position:relative;z-index:1001;min-height:44px;min-width:76px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .nav{background:transparent;border:0;padding:0;gap:4px;align-items:center;margin-left:auto}
 .nav a{flex:none;padding:10px 14px;font-size:16px;color:#E3ECE0;border-radius:8px;border-bottom:3px solid transparent;border-radius:8px 8px 0 0}
 .nav a:hover{background:rgba(255,255,255,.12);color:#fff}
@@ -209,25 +210,32 @@ html{scroll-behavior:smooth}
 .ftr .soc{gap:18px}.ftr .soc a{color:var(--gold)}
 .ftr-bar{border-top:1px solid rgba(255,255,255,.14);padding:16px 24px;text-align:center;font-size:13px;color:#A9AFA2}
 
-/* ===== Mobile Menu (Responsive) ===== */
+/* ===== Tablet + phone (includes the mobile menu dropdown) ===== */
 @media (max-width:900px){
+  .hdr-in{position:relative;flex-wrap:nowrap}
   .menu-btn{display:block;margin-left:auto}
+  /* dropdown panel that opens under the header */
   .nav{
     display:none;
-    width:100%;
+    position:absolute;
+    top:100%;
+    left:12px;
+    right:12px;
+    width:auto;
+    margin:6px 0 0;
+    padding:8px;
     flex-direction:column;
     align-items:stretch;
-    padding:8px 0 12px;
-    margin-left:0;
-    margin-top:10px;
     background:var(--green-dk);
-    border-radius:10px;
+    border:2px solid var(--gold);
+    border-radius:12px;
+    box-shadow:0 12px 28px rgba(0,0,0,.28);
   }
-  .nav.open{display:flex}
+  #nav.open{display:flex}
   .nav a,.nav a.btn-join{
     text-align:left;
     margin:0;
-    padding:14px 20px;
+    padding:14px 16px;
     border-radius:8px;
     border-bottom:0;
   }
@@ -307,7 +315,7 @@ html{scroll-behavior:smooth}
   .pcard img { height: 140px; }
 }
 
-/* ===== Dynamic & Appealing Animations (Added) ===== */
+/* ===== Dynamic & Appealing Animations ===== */
 /* Hero animated gradient */
 .hero {
   background: linear-gradient(-45deg, #1F4D2B, #163a20, #2a6b3d, #1F4D2B);
